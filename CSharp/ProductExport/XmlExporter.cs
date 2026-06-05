@@ -153,37 +153,24 @@ namespace ProductExport
         {
             var xml = new StringBuilder();
             xml.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-            xml.Append("<orderHistory");
-            xml.Append(" createdAt='");
-            var now = DateTime.Now;
-            xml.Append(Util.ToIsoDate(now));
-            xml.Append("'");
-            xml.Append(">");
+            xml.Append($"<orderHistory createdAt='{Util.ToIsoDate(DateTime.Now)}'>");
             foreach (var order in orders)
             {
-                xml.Append("<order");
-                xml.Append(" date='");
-                xml.Append(Util.ToIsoDate(order.Date));
-                xml.Append("'");
-                xml.Append(" totalDollars='");
-                xml.Append(PrintPrice(order.TotalDollars()));
-                xml.Append("'>");
-                foreach (var product in order.Products)
-                {
-                    xml.Append("<product");
-                    xml.Append(" id='");
-                    xml.Append(product.Id);
-                    xml.Append("'");
-                    xml.Append(">");
-                    xml.Append(product.Name);
-                    xml.Append("</product>");
-                }
-
-                xml.Append("</order>");
+                CreateOrderBody(xml, order);
             }
 
             xml.Append("</orderHistory>");
             return XmlFormatter.PrettyPrint(xml.ToString());
+        }
+
+        private static void CreateOrderBody(StringBuilder xml, Order order)
+        {
+            xml.Append($"<order date='{Util.ToIsoDate(order.Date)}' totalDollars='{PrintPrice(order.TotalDollars())}'>");
+            foreach (var product in order.Products)
+            {
+                xml.Append($"<product id='{product.Id}'>{product.Name}</product>");
+            }
+            xml.Append("</order>");
         }
 
         private static string StylistFor(Product product)

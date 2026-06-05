@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using VerifyXunit;
@@ -11,7 +12,7 @@ namespace ProductExport;
 public class XmlExporterTest
 {
     [Fact]
-    public Task Something()
+    public Task GivenACompleteOrder_VerifyOrder()
     {
         var json = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(),"Orders.json"));
         var orders = JsonConvert.DeserializeObject<List<Order>>(json);
@@ -22,9 +23,38 @@ public class XmlExporterTest
     }
     
     [Fact]
-    public void Price()
+    public Task GivenACompleteOrder_VerifyTaxDetails()
     {
-        var json = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(),"Temp.json"));
-        var price = JsonConvert.DeserializeObject<Product>(json);
+        var json = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(),"Orders.json"));
+        var orders = JsonConvert.DeserializeObject<List<Order>>(json);
+
+        var xml = XmlExporter.ExportTaxDetails(orders);
+
+        return Verifier.VerifyXml(xml);
+    }
+
+    [Fact]
+    public Task GivenAStore_VerifyStore()
+    {
+        var json = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(),"Orders.json"));
+        var orders = JsonConvert.DeserializeObject<List<Order>>(json);
+
+        var store = orders.Select(x => x.Store).FirstOrDefault();
+        
+        var xml = XmlExporter.ExportStore(store);
+
+        return Verifier.VerifyXml(xml);
+    }
+    
+    [Fact]
+    public Task GivenAStore_VerifyHistory()
+    {
+        var json = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(),"Orders.json"));
+        var orders = JsonConvert.DeserializeObject<List<Order>>(json);
+        
+        var xml = XmlExporter.ExportHistory(orders);
+    
+        return Verifier.VerifyXml(xml)
+            .ScrubLinesContaining("createdAt");
     }
 }
