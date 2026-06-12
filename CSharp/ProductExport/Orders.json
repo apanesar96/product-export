@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ORD-2026-001",
+    "dateTime": "2026-02-20T10:30:00Z",
+    "store": {
+      "name": "Metro Industrial Supply",
+      "id": "ST-001",
+      "products": [
+        { "name": "Titanium Bolt", "type": "Fastener", "weight": 2, "price": { "amount": 15.50, "currencyCode": "USD" } },
+        { "name": "Industrial Motor", "type": "Heavy Machinery", "weight": 450, "price": { "amount": 1200.00, "currencyCode": "USD" } },
+        { "name": "Steel Beam", "type": "Construction", "weight": 1200, "price": { "amount": 450.00, "currencyCode": "USD" } }
+      ]
+    },
+    "products": [
+      { "name": "Industrial Motor", "type": "Heavy Machinery", "weight": 450, "price": { "amount": 1200.00, "currencyCode": "USD" } },
+      { "name": "Titanium Bolt", "type": "Fastener", "weight": 2, "price": { "amount": 15.50, "currencyCode": "USD" } }
+    ]
+  },
+  {
+    "id": "ORD-2026-002",
+    "dateTime": "2026-02-20T14:15:00Z",
+    "store": {
+      "name": "TechHub Components",
+      "id": "ST-002",
+      "products": [
+        { "name": "Circuit Board", "type": "Electronics", "weight": 1, "price": { "amount": 85.25, "currencyCode": "USD" } },
+        { "name": "Cooling Fan", "type": "Component", "weight": 5, "price": { "amount": 32.99, "currencyCode": "USD" } }
+      ]
+    },
+    "products": [
+      { "name": "Circuit Board", "type": "Electronics", "weight": 1, "price": { "amount": 85.25, "currencyCode": "USD" } },
+      { "name": "Circuit Board", "type": "Electronics", "weight": 1, "price": { "amount": 85.25, "currencyCode": "USD" } },
+      { "name": "Cooling Fan", "type": "Component", "weight": 5, "price": { "amount": 32.99, "currencyCode": "USD" } }
+    ]
+  },
+  {
+    "id": "ORD-2026-003",
+    "dateTime": "2026-02-21T09:00:00Z",
+    "store": {
+      "name": "Build-It Center",
+      "id": "ST-003",
+      "products": [
+        { "name": "Titanium Bolt", "type": "Fastener", "weight": 2, "price": { "amount": 15.50, "currencyCode": "USD" } },
+        { "name": "Steel Beam", "type": "Construction", "weight": 1200, "price": { "amount": 450.00, "currencyCode": "USD" } },
+        { "name": "Cooling Fan", "type": "Component", "weight": 5, "price": { "amount": 32.99, "currencyCode": "USD" } }
+      ]
+    },
+    "products": [
+      { "name": "Steel Beam", "type": "Construction", "weight": 1200, "price": { "amount": 450.00, "currencyCode": "USD" } }
+    ]
+  }
+]

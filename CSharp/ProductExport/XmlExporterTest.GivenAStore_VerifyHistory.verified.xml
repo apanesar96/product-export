@@ -1,0 +1,13 @@
+﻿  <order date="2026-02-20T10:30:00Z" totalDollars="1,215.50">
+    <product id="Heavy Machinery">Industrial Motor</product>
+    <product id="Fastener">Titanium Bolt</product>
+  </order>
+  <order date="2026-02-20T14:15:00Z" totalDollars="203.49">
+    <product id="Electronics">Circuit Board</product>
+    <product id="Electronics">Circuit Board</product>
+    <product id="Component">Cooling Fan</product>
+  </order>
+  <order date="2026-02-21T09:00:00Z" totalDollars="450.00">
+    <product id="Construction">Steel Beam</product>
+  </order>
+</orderHistory>

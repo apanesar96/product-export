@@ -1,0 +1,20 @@
+﻿<orders>
+  <order id="ORD-2026-001">
+    <product id="Heavy Machinery" weight="450">
+      <price currency="USD">1,200.00</price>Industrial Motor</product>
+    <product id="Fastener" weight="2">
+      <price currency="USD">15.50</price>Titanium Bolt</product>
+  </order>
+  <order id="ORD-2026-002">
+    <product id="Electronics" weight="1">
+      <price currency="USD">85.25</price>Circuit Board</product>
+    <product id="Electronics" weight="1">
+      <price currency="USD">85.25</price>Circuit Board</product>
+    <product id="Component" weight="5">
+      <price currency="USD">32.99</price>Cooling Fan</product>
+  </order>
+  <order id="ORD-2026-003">
+    <product id="Construction" weight="1200">
+      <price currency="USD">450.00</price>Steel Beam</product>
+  </order>
+</orders>

@@ -1,0 +1,8 @@
+﻿<store name="Metro Industrial Supply">
+  <product id="Fastener" weight="2">
+    <price currency="USD">15.50</price>Titanium Bolt</product>
+  <product id="Heavy Machinery" weight="450">
+    <price currency="USD">1,200.00</price>Industrial Motor</product>
+  <product id="Construction" weight="1200">
+    <price currency="USD">450.00</price>Steel Beam</product>
+</store>

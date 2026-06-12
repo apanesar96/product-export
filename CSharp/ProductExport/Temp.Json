@@ -1,0 +1,9 @@
+{
+  "Name": "Steel Beam",
+  "Type": "Construction",
+  "Weight": 1200,
+  "Price": {
+    "Amount": 450.00,
+    "CurrencyCode": "USD"
+  }
+}
